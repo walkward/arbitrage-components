@@ -5,18 +5,22 @@
   "dependencies": {
     "@storybook/react": "3.4.8",
     "chance": "1.0.16",
+    "grid-styled": "4.3.2",
+    "normalize.css": "8.0.0",
     "prop-types": "15.6.2",
     "react": "16.4.1",
     "react-dom": "16.4.1",
     "react-scripts": "1.1.4",
-    "react-table": "6.8.6"
+    "react-table": "6.8.6",
+    "styled-components": "3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "lint:css": "stylelint './src/**/*.js'"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
@@ -24,6 +28,11 @@
     "eslint-config-airbnb": "17.0.0",
     "eslint-plugin-import": "2.13.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
-    "eslint-plugin-react": "7.9.1"
+    "eslint-plugin-react": "7.9.1",
+    "stylelint": "9.3.0",
+    "stylelint-config-recommended": "2.1.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-custom-processor-loader": "0.5.0",
+    "stylelint-processor-styled-components": "1.3.1"
   }
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Table from './Table';
-import CheckBoxInput from '../CheckBoxInput';
+import Checkbox from '../Checkbox';
 
-export default class CheckBoxTable extends Table {
+export default class CheckboxTable extends Table {
   constructor({ data, columns, defaultPageSize }) {
     super({ data });
 
@@ -34,7 +34,7 @@ export default class CheckBoxTable extends Table {
       handleClick: evt => toggleRow(evt, row),
     };
 
-    return React.createElement(CheckBoxInput, inputProps);
+    return React.createElement(Checkbox, inputProps);
   }
 
   headSelect() {
@@ -44,7 +44,7 @@ export default class CheckBoxTable extends Table {
       handleClick: toggleAll,
     };
 
-    return React.createElement(CheckBoxInput, inputProps);
+    return React.createElement(Checkbox, inputProps);
   }
 
   isSelected(index) {

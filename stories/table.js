@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Table from '../src/components/Table/Table';
-import CheckBoxTable from '../src/components/Table/CheckBoxTable';
+import { Box } from 'grid-styled';
+import { Table, CheckboxTable } from '../src/components/Table';
 import { makeData, makeColumns } from '../src/components/Table/utils';
 
 const columns = makeColumns();
@@ -9,21 +9,33 @@ const data = makeData();
 
 storiesOf('Table', module)
   .add('Basic', () => (
-    <Table data={data} columns={columns} />
+    <Box p={3}>
+      <Table data={data} columns={columns} />
+    </Box>
   ))
   .add('External Data', () => {
     const fetchData = async () => ({
       pages: 5,
       data: makeData(90),
     });
-    return <Table fetchData={fetchData} columns={columns} loading />;
+    return (
+      <Box p={3}>
+        <Table fetchData={fetchData} columns={columns} loading />
+      </Box>
+    );
   })
   .add('Filterable', () => (
-    <Table data={data} columns={columns} filterable />
+    <Box p={3}>
+      <Table data={data} columns={columns} filterable />
+    </Box>
   ))
   .add('Fixed Header', () => (
-    <Table data={data} columns={columns} height={400} />
+    <Box p={3}>
+      <Table data={data} columns={columns} height={400} />
+    </Box>
   ))
   .add('Selectable', () => (
-    <CheckBoxTable data={data} columns={columns} />
+    <Box p={3}>
+      <CheckboxTable data={data} columns={columns} />
+    </Box>
   ));
