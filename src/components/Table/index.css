@@ -1,6 +1,28 @@
+.ReactTable,
+.ReactTable .-pagination {
+  border-left: none;
+  border-right: none;
+  border-color: rgba(0,0,0,0.05);
+  border-width: 1px;
+}
+
+.ReactTable .rt-thead .rt-th {
+  border-color: rgba(0,0,0,0.02);
+  border-width: 1px;
+}
+
+.ReactTable .-pagination,
 .ReactTable .rt-thead.-header {
   box-shadow: none;
-  border-bottom: solid 1px rgba(0,0,0,0.05);
+}
+
+.ReactTable .-pagination {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ReactTable .rt-thead.-header {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   font-family: Poppins;
   font-weight: 600;
 }

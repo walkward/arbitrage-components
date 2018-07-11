@@ -20,3 +20,4 @@ export const clear = 'transparent';
 export const black = '#2a2f41';
 export const white = '#fefefe';
 export const lightGray = '#f0f3f6';
+export const mediumGray = '#6a7086';

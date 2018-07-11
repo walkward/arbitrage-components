@@ -1,41 +1,65 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box } from 'grid-styled';
 import { Table, CheckboxTable } from '../src/components/Table';
 import { makeData, makeColumns } from '../src/components/Table/utils';
+import { Row, Column } from '../src/components/Grid';
+import Card from '../src/components/Card';
 
 const columns = makeColumns();
 const data = makeData();
 
 storiesOf('Table', module)
   .add('Basic', () => (
-    <Box p={3}>
-      <Table data={data} columns={columns} />
-    </Box>
+    <Row pt={3}>
+      <Column width={1}>
+        <Card>
+          <Table data={data} columns={columns} />
+        </Card>
+      </Column>
+    </Row>
   ))
   .add('External Data', () => {
-    const fetchData = async () => ({
-      pages: 5,
-      data: makeData(90),
-    });
+    const fetchData = async () => {
+      await new Promise(res => setTimeout(res, 1000)); // Simulate delayed loading
+      return {
+        pages: 5,
+        data: makeData(90),
+      };
+    };
     return (
-      <Box p={3}>
-        <Table fetchData={fetchData} columns={columns} loading />
-      </Box>
+      <Row pt={3}>
+        <Column width={1}>
+          <Card>
+            <Table fetchData={fetchData} columns={columns} loading />
+          </Card>
+        </Column>
+      </Row>
     );
   })
   .add('Filterable', () => (
-    <Box p={3}>
-      <Table data={data} columns={columns} filterable />
-    </Box>
+    <Row pt={3}>
+      <Column width={1}>
+        <Card>
+          <Table data={data} columns={columns} filterable />
+        </Card>
+      </Column>
+    </Row>
   ))
   .add('Fixed Header', () => (
-    <Box p={3}>
-      <Table data={data} columns={columns} height={400} />
-    </Box>
+    <Row pt={3}>
+      <Column width={1}>
+        <Card>
+          <Table data={data} columns={columns} height={400} />
+        </Card>
+      </Column>
+    </Row>
   ))
   .add('Selectable', () => (
-    <Box p={3}>
-      <CheckboxTable data={data} columns={columns} />
-    </Box>
+    <Row pt={3}>
+      <Column width={1}>
+        <Card>
+          <CheckboxTable data={data} columns={columns} />
+        </Card>
+      </Column>
+    </Row>
   ));

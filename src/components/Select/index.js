@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from 'grid-styled';
+import { uniqueId } from 'lodash';
 import StyledSelect from './StyledSelect';
-import StyledLabel from './StyledLabel';
+import StyledLabel from '../Label/StyledLabel';
 
 const Option = ({ text, value }) => (
   <option value={value}>{text}</option>
@@ -12,7 +13,7 @@ const Select = (props) => {
   const {
     options, name, label, multiple,
   } = props;
-  const id = `${name}Input`;
+  const id = uniqueId(`${name}_`);
   const optionsRenedered = options.map(p => (<Option key={p.value} {...p} />));
   return (
     <Box>

@@ -1,7 +1,7 @@
 import { injectGlobal } from 'styled-components';
 import * as typography from './typography';
-import { globalMargin } from './theme';
-import { lightGray } from './colors';
+import { globalMargin, borderColor, globalPadding } from './theme';
+import { lightGray, mediumGray } from './colors';
 
 const headers = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
@@ -86,7 +86,7 @@ injectGlobal`
 
     small {
       line-height: 0;
-      color: #cacaca;
+      color: ${mediumGray};
     }
   }
 
@@ -96,7 +96,7 @@ injectGlobal`
     margin: ${globalMargin} auto;
     border-top: 0;
     border-right: 0;
-    border-bottom: 1px solid #cacaca;
+    border-bottom: 1px solid ${borderColor};
     border-left: 0;
   }
 
@@ -128,14 +128,14 @@ injectGlobal`
   blockquote {
     margin: 0 0 ${globalMargin};
     padding: 0.5625rem 1.25rem 0 1.1875rem;
-    border-left: 1px solid #cacaca;
-    color: #8a8a8a;
+    border-left: 1px solid ${borderColor};
+    color: ${mediumGray};
   }
 
   cite {
     display: block;
     font-size: 0.8125rem;
-    color: #8a8a8a;
+    color: ${mediumGray};
 
     &:before {
       content: "— ";
@@ -144,7 +144,7 @@ injectGlobal`
 
   abbr,
   abbr[title] {
-    border-bottom: 1px dotted #0a0a0a;
+    border-bottom: 1px dotted ${borderColor};
     cursor: help;
     text-decoration: none;
   }
@@ -179,5 +179,17 @@ injectGlobal`
   tr,
   img {
     page-break-inside: avoid;
+  }
+
+  fieldset {
+    border-color: ${borderColor};
+    border-width: 1px;
+    border-style: solid;
+    padding-left: ${globalPadding};
+    padding-right: ${globalPadding};
+  }
+
+  .margin-0 {
+    margin: 0 !important;
   }
 `;

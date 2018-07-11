@@ -4,7 +4,7 @@ import { borderColor, borderRadius, globalMargin } from '../../styles/theme';
 const inputStyles = css`
   line-height: 1.15;
   overflow: visible;
-  
+
   &[type='text'],
   &[type='password'],
   &[type='date'],
@@ -27,13 +27,16 @@ const inputStyles = css`
     border-radius: ${borderRadius};
     background-color: #fefefe;
     line-height: 1.5;
+    box-sizing: border-box;
+  }
+
+  &[type='radio'] {
+    height: 25px;
   }
 
   &[type='checkbox'],
   &[type='radio'] {
     display: inline-block;
-    margin: 0 0 ${globalMargin};
-    padding: 0;
 
     + label {
       display: inline-block;
@@ -42,6 +45,10 @@ const inputStyles = css`
       margin-right: ${globalMargin};
       margin-bottom: 0;
     }
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 

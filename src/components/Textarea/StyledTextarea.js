@@ -10,6 +10,10 @@ const textareaStyles = css`
   border-radius: ${borderRadius};
   background-color: #fefefe;
   line-height: 1.5;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const StyledTextarea = styled.textarea`

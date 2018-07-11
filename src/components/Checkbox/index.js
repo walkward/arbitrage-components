@@ -1,25 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Flex } from 'grid-styled';
+import { uniqueId } from 'lodash';
+import StyledInput from '../Input/StyledInput';
+import StyledLabel from '../Label/StyledLabel';
 
-const CheckBoxInput = ({ checked, handleClick, readOnly }) => (
-  <input
-    type="checkbox"
-    checked={checked}
-    onClick={handleClick}
-    readOnly={readOnly}
-  />
-);
+const InlineFlex = styled(Flex)`
+  display: inline-flex;
+`;
 
-CheckBoxInput.propTypes = {
+const CheckBox = ({
+  checked, handleClick, readOnly, label,
+}) => {
+  const id = uniqueId('checkbox_');
+
+  const input = (
+    <StyledInput
+      id={id}
+      type="checkbox"
+      checked={checked}
+      onClick={handleClick}
+      readOnly={readOnly}
+    />
+  );
+
+  if (label) {
+    return (
+      <InlineFlex alignItems="center">
+        {input}
+        <StyledLabel htmlFor={id}>{label}</StyledLabel>
+      </InlineFlex>
+    );
+  }
+
+  return input;
+};
+
+CheckBox.propTypes = {
   handleClick: PropTypes.func,
-  checked: PropTypes.bool,
   readOnly: PropTypes.bool,
+  label: PropTypes.string,
 };
 
-CheckBoxInput.defaultProps = {
+CheckBox.defaultProps = {
   handleClick: () => null,
-  checked: false,
-  readOnly: true,
+  readOnly: false,
+  label: '',
 };
 
-export default CheckBoxInput;
+export default CheckBox;

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { borderRadius, globalMargin } from '../../styles/theme';
+import { borderRadius } from '../../styles/theme';
 import { body } from '../../styles/typography';
 import * as colors from '../../styles/colors';
 
@@ -18,7 +18,7 @@ const settings = {
 const buttonStyles = css`
   display: inline-block;
   vertical-align: middle;
-  margin: 0 ${globalMargin} ${globalMargin} 0;
+  margin: 0;
   padding: 0.85em 1em;
   border-style: solid;
   border-color: ${({ type, color }) => (type === 'outline' ? colors[color] : 'transparent')};
