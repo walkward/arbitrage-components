@@ -1,4 +1,4 @@
-import { black, white, luminance } from './colors';
+import { black, white } from './colors';
 
 export const fonts = {
   body: '\'Lato\', \'Helvetica Neue\', Helvetica, Arial, sans-serif',

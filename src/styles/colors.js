@@ -10,11 +10,13 @@ export function luminance(hex, luminosity = 0) {
   }, '#');
 }
 
-export const primary = '#1779ba';
-export const secondary = '#767676';
-export const success = '#3adb76';
-export const warning = '#ffae00';
+export const primary = '#0576ff';
+export const secondary = '#2a2f41';
+export const success = '#5ece65';
+export const warning = '#ffc233';
 export const alert = '#cc4b37';
+export const clear = 'transparent';
 
-export const black = '#222222';
+export const black = '#2a2f41';
 export const white = '#fefefe';
+export const lightGray = '#f0f3f6';

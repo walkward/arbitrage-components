@@ -1,6 +1,7 @@
 import { injectGlobal } from 'styled-components';
 import * as typography from './typography';
 import { globalMargin } from './theme';
+import { lightGray } from './colors';
 
 const headers = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
@@ -15,6 +16,7 @@ injectGlobal`
     color: ${typography.body.color};
     font-weight: ${typography.weight.normal};
     font-family: ${typography.body.fontFamily};
+    background-color: ${lightGray};
     box-sizing: border-box;
   }
 
@@ -80,7 +82,7 @@ injectGlobal`
   h5,
   h6 {
     text-rendering: optimizeLegibility;
-    margin: 0 0 ${globalMargin} 0;
+    margin: 0;
 
     small {
       line-height: 0;
